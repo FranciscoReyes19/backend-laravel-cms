@@ -33,7 +33,7 @@
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Cotizador</a>
+			<a class="navbar-brand" href="#">Esta es una rama Test</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		        <ul class="nav navbar-nav">
@@ -68,7 +68,7 @@
 		@endif
 	</div>
 	<div class="title-index">
-		<h1>Sistema de Cotización</h1>
+		<h1>Sistema de Cotización Rama</h1>
 	</div>
 	
 	<div class="container">
