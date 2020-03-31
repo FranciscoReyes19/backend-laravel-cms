@@ -14,11 +14,11 @@ class CreateEmpleadosTable extends Migration
     public function up()
     {
         //
-        Schema::create('empleados', function (Blueprint $table) {
-            $table->increments('empleado_id');
-            $table->string('nombre_empleado');
+        Schema::create('personal', function (Blueprint $table) {
+            $table->increments('personal_id');
+            $table->string('nombre_personal');
             $table->enum('type', ['empleado','supervisor'])->default('empleado');
-            $table->string('apellido_empleado');
+            $table->string('apellido_personal');
             $table->timestamps();
         });
 
@@ -33,7 +33,7 @@ class CreateEmpleadosTable extends Migration
     public function down()
     {
         //
-        Schema::drop('empleados');
+        Schema::drop('personal');
     }
 }
 

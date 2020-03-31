@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cotizacion</title>
+    <title>Intranet</title>
     {!! Html::style('assets/css/bootstrap.css') !!}
     <!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -33,7 +33,7 @@
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Cotizador</a>
+			<a class="navbar-brand" href="{{URL::to('/')}}">Intranet ARI</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		        <ul class="nav navbar-nav">
@@ -67,27 +67,31 @@
 		    </div>
 		@endif
 	</div>
-	<div class="title-index">
-		<h1>Sistema de Cotización</h1>
+	<div class="title-index ">
+		<h2>Intranet</h2>
 	</div>
 	
 	<div class="container">
 		<div class="row">
 		  <div class="col">
 			@if (Auth::guest())
-				<a class="btn btn-primary btn-lg disabled" href="{{ route('procesos.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Gestionar procesos</a>
-				<a class="btn btn-success btn-lg disabled" href="{{ route('empleados.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Gestionar empleados</a>
-				<a class="btn btn-warning btn-lg disabled" href="{{ route('realizan.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Asignar procesos</a>
-				<a class="btn btn-primary btn-lg disabled" href="{{ route('reportes.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Ver reportes</a>
-				<a class="btn btn-warning btn-lg disabled" href="{{ route('prestamos.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Realizar prestamo</a>
-				<a class="btn btn-success btn-lg disabled" href="{{ route('nomina.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Pagar a empleado</a>
+				<a class="btn btn-primary btn-lg disabled" href="{{ route('personal.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Personal Administracion</a>
+				<a class="btn btn-success btn-lg disabled" href="{{ route('empleados.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Personal Seguridad</a>
+				<!--
+					<a class="btn btn-warning btn-lg disabled" href="{{ route('realizan.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Asignar procesos</a>
+					<a class="btn btn-primary btn-lg disabled" href="{{ route('reportes.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Ver reportes</a>
+					<a class="btn btn-warning btn-lg disabled" href="{{ route('prestamos.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Realizar prestamo</a>
+					<a class="btn btn-success btn-lg disabled" href="{{ route('nomina.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Pagar a empleado</a>
+					-->
 			@else
-				<a class="btn btn-primary btn-lg" href="{{ route('procesos.index') }}" role="button">Gestionar procesos</a>
+				<a class="btn btn-primary btn-lg" href="{{ route('personal.index') }}" role="button">Personal Administracion</a>
 				<a class="btn btn-primary btn-lg" href="{{ route('empleados.index') }}" role="button" >Gestionar empleados</a>
-				<a class="btn btn-primary btn-lg" href="{{ route('realizan.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Asignar procesos</a>
-				<a class="btn btn-primary btn-lg" href="{{ route('reportes.index') }}" role="button" >Ver reportes</a>
-				<a class="btn btn-primary btn-lg" href="{{ route('prestamos.index') }}" role="button" >Realizar prestamo</a>
-				<a class="btn btn-primary btn-lg" href="{{ route('nomina.index') }}" role="button" >Pagar a empleado</a>
+				<!--
+					<a class="btn btn-primary btn-lg" href="{{ route('realizan.index') }}" role="button" title="Inicia sesión para acceder a esta característica">Asignar procesos</a>
+					<a class="btn btn-primary btn-lg" href="{{ route('reportes.index') }}" role="button" >Ver reportes</a>
+					<a class="btn btn-primary btn-lg" href="{{ route('prestamos.index') }}" role="button" >Realizar prestamo</a>
+					<a class="btn btn-primary btn-lg" href="{{ route('nomina.index') }}" role="button" >Pagar a empleado</a>
+				-->
 			@endif	
 		</div>
 		</div>

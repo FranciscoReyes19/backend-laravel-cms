@@ -14,6 +14,7 @@
 //Resources
 Route::resource('procesos', 'ProcesoController');
 Route::resource('empleados', 'EmpleadosController');
+Route::resource('personal', 'PersonalAdminController');
 Route::resource('realizan', 'RealizanController');
 Route::resource('reportes','ReportesController');
 Route::resource('prestamos','prestamoController');
@@ -27,6 +28,11 @@ Route::get('empl', 'EmpleadosController@index');
 Route::get('real', 'RealizanController@index');
 // Route::get('showProcess', 'EmpleadosController@getProcess');
 Route::get('report', 'ReportController@index');
+
+//FRANCISCO REYES 23/03/2020
+//Todos los empleados
+Route::get('/empleadosAll', 'EmpleadosController@Empleados');
+
 // Route::get('asig', 'LoadingEmpleadosController@index');
 // Route::get('showEmpleados', 'LoadingEmpleadosController@ShowEmpleados');
 // Route::get('showProcesos', 'LoadingEmpleadosController@ShowProcesos');

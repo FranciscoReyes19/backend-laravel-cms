@@ -8,8 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Empleado;
 use App\Proceso;
+use App\User;
 
-class EmpleadosController extends Controller
+class PersonalAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +19,10 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-        $empleado = Empleado::get();
-        return view('empleados.index')->with('empleados', $empleado);
-        
+        $users = User::get();
+        //return json_decode($user);
+        return view('personal.index')->with('users', $users);
+
     }
     /**
     public function Empleados()
@@ -33,7 +35,7 @@ class EmpleadosController extends Controller
                     'posts' => $empleados
                         ], 200);
     }
-    */
+    **/
     /**
      * Show the form for creating a new resource.
      *
@@ -99,16 +101,21 @@ class EmpleadosController extends Controller
      * @param  int  $clave_empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $clave_empleado)
+    //public function update($user,$name)
+    public function update(Request $request, $id)
     {
-        $empleado = Empleado::find($clave_empleado);
-        $empleado->empleado_id = $request->input('empleado_id');
-        $empleado->nombre_empleado = $request->input('nombre_empleado');
-        $empleado->type = $request->input('type');
-        $empleado->apellido_empleado = $request->input('apellido_empleado');
-        \Toast::success($empleado->nombre_empleado.' Clave: '.$empleado->empleado_id, 'Datos del Empleado actualizado');
-        $empleado->save();
-        return redirect()->route('empleados.index');
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        
+        try{
+            $user->save();
+            \Toast::success('Datos del Usuario actualizado');
+            return redirect()->route('personal.index');
+        }catch( Exception $err){
+            \Toast::success('No se ha realizado la actualizacion', $err);
+            
+        }
     }
 
     /**
